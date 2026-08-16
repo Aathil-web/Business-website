@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sonas Beauty Parlour in Bhavanisagar, near the Bus Stand, Bagadudhurai Road.">
+  <title>Sonas Beauty Parlour | Bhavanisagar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --rose:#d94b70; --deep:#4a0b24; --cream:#fff8f5; --ink:#321821;
+      --gold:#bd8741; --soft:#f9e5e5; --white:#fff;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:"DM Sans",sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .topbar{background:var(--deep);color:#fff;padding:10px 6%;font-size:.86rem;display:flex;justify-content:space-between;gap:20px}
+    nav{height:82px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 6%;position:sticky;top:0;z-index:20;box-shadow:0 4px 20px #4a0b2410}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand-mark{width:48px;height:48px;border:2px solid var(--rose);border-radius:50%;display:grid;place-items:center;color:var(--rose);font-family:"Playfair Display";font-size:23px}
+    .brand h1{font:600 1.7rem "Playfair Display";letter-spacing:.08em;color:var(--rose);line-height:1}
+    .brand span{font-size:.72rem;letter-spacing:.22em;color:var(--deep)}
+    .links{display:flex;gap:28px;align-items:center;font-weight:600;font-size:.94rem}
+    .links a:hover{color:var(--rose)}
+    .btn{display:inline-block;background:var(--rose);color:#fff;border:0;border-radius:999px;padding:13px 22px;font-weight:700;cursor:pointer;transition:.25s}
+    .btn:hover{transform:translateY(-2px);filter:brightness(.96)}
+    .btn.alt{background:#fff;color:var(--rose);border:1px solid var(--rose)}
+    .menu{display:none;background:none;border:0;font-size:28px;color:var(--deep)}
+    .hero{min-height:620px;display:grid;grid-template-columns:1.02fr .98fr;align-items:center;padding:70px 7%;background:
+      radial-gradient(circle at 8% 30%,#f4b6c755 0 90px,transparent 91px),
+      linear-gradient(120deg,#fff8f5 0%,#fde9e6 53%,#f6c7c8 100%);overflow:hidden}
+    .hero-copy{max-width:650px}
+    .eyebrow{color:var(--gold);font:italic 1.7rem "Playfair Display";margin-bottom:6px}
+    .hero h2{font:600 clamp(3.2rem,7vw,6rem)/.95 "Playfair Display";color:var(--rose);letter-spacing:.02em}
+    .hero h3{font:600 clamp(1.6rem,3vw,2.5rem) "Playfair Display";color:var(--deep);margin:8px 0 18px}
+    .tagline{color:var(--rose);font-size:1.15rem;font-weight:600;margin-bottom:16px}
+    .location{margin:0 0 26px;font-size:1rem}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-art{height:470px;border-radius:220px 220px 35px 35px;position:relative;overflow:hidden;background:
+      linear-gradient(145deg,#fff0ebaa,#d8798966),
+      url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1100&q=85") center/cover;}
+    .hero-art:after{content:"Beauty • Care • Confidence";position:absolute;right:22px;bottom:22px;background:#fffdfde6;color:var(--deep);padding:18px 22px;border-radius:18px;font:600 1.05rem "Playfair Display";box-shadow:0 10px 30px #4a0b2415}
+    section{padding:82px 7%}
+    .section-head{text-align:center;max-width:720px;margin:0 auto 42px}
+    .section-head .small{color:var(--gold);font:italic 1.35rem "Playfair Display"}
+    .section-head h2{font:600 clamp(2.1rem,4vw,3.1rem) "Playfair Display";color:var(--deep)}
+    .section-head p{margin-top:8px;color:#6d5960}
+    .services{background:#fff}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{background:var(--cream);border:1px solid #efd9da;border-radius:22px;padding:28px;transition:.25s}
+    .card:hover{transform:translateY(-5px);box-shadow:0 15px 35px #4a0b2410}
+    .icon{font-size:2rem;margin-bottom:10px}
+    .card h3{font:600 1.35rem "Playfair Display";color:var(--deep);margin-bottom:5px}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+    .about-img{min-height:390px;border-radius:30px;background:url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1100&q=85") center/cover}
+    .about h2{font:600 2.8rem "Playfair Display";color:var(--deep);margin-bottom:14px}
+    .about p{color:#66545a;margin-bottom:14px}
+    .gallery{background:#fff}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .gallery-grid img{width:100%;height:220px;object-fit:cover;border-radius:18px}
+    .booking{background:linear-gradient(135deg,var(--deep),#7e2145);color:#fff;text-align:center}
+    .booking h2{font:600 2.8rem "Playfair Display";margin-bottom:10px}
+    .booking p{opacity:.9;max-width:650px;margin:0 auto 24px}
+    .booking .btn{background:#fff;color:var(--deep)}
+    .location-box{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:stretch}
+    .info-box{background:#fff;border-radius:24px;padding:32px;border:1px solid #efd9da}
+    .info-box h3{font:600 1.7rem "Playfair Display";color:var(--deep);margin-bottom:12px}
+    .map{min-height:320px;border-radius:24px;background:linear-gradient(135deg,#f3d7d8,#fff4ef);display:grid;place-items:center;text-align:center;padding:30px;border:1px solid #efd9da}
+    footer{background:var(--deep);color:#fff;text-align:center;padding:30px 6%;font-size:.9rem}
+    .notice{font-size:.82rem;color:#876d75;margin-top:14px}
+    @media(max-width:850px){
+      .topbar{display:none}.links{display:none}.menu{display:block}
+      nav{height:72px}.hero{grid-template-columns:1fr;padding:55px 6%}.hero-art{height:360px;margin-top:35px}
+      .grid,.gallery-grid{grid-template-columns:1fr 1fr}.about,.location-box{grid-template-columns:1fr}
+    }
+    @media(max-width:520px){
+      .grid,.gallery-grid{grid-template-columns:1fr}
+      section{padding:60px 5%}.hero h2{font-size:3.6rem}.hero h3{font-size:1.7rem}
+      .hero-art{height:330px}.actions .btn{width:100%;text-align:center}
+      .gallery-grid img{height:250px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <span>📍 Bagaduthurai Road · Near the Bus Stand · Bhavanisagar - 638541</span>
+    <span>✨ Beauty · Care · Confidence</span>
+  </div>
+
+  <nav>
+    <a class="brand" href="#home">
+      <div class="brand-mark">S</div>
+      <div><h1>SONAS</h1><span>BEAUTY PARLOUR</span></div>
+    </a>
+    <div class="links">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a>
+      <a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+      <a class="btn" href="#booking">Book Appointment</a>
+    </div>
+    <button class="menu" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+  </nav>
+
+  <div id="mobileMenu" style="display:none;background:#fff;padding:12px 6%;position:sticky;top:72px;z-index:19;box-shadow:0 10px 20px #4a0b2410">
+    <a href="#home" onclick="toggleMenu()">Home</a><br><a href="#about" onclick="toggleMenu()">About</a><br>
+    <a href="#services" onclick="toggleMenu()">Services</a><br><a href="#gallery" onclick="toggleMenu()">Gallery</a><br>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+  </div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow">Welcome to</div>
+        <h2>SONAS</h2>
+        <h3>BEAUTY PARLOUR</h3>
+        <div class="tagline">Beauty · Care · Confidence</div>
+        <p class="location">📍 Bagaduthurai Road, near the Bus Stand,<br>Bhavanisagar - 638541</p>
+        <div class="actions">
+          <a class="btn" href="https://wa.me/919688347315?text=Hello%20Sonas%20Beauty%20Parlour%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">♡ Book an Appointment</a>
+          <a class="btn alt" href="#contact">Contact Us</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Beauty salon image"></div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="section-head">
+        <div class="small">Pamper yourself</div><h2>Our Services</h2>
+        <p>A beautiful collection of salon services for your everyday glow and special moments.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><div class="icon">💇‍♀️</div><h3>Hair Care</h3><p>Haircut, styling, hair spa, smoothening and more.</p></article>
+        <article class="card"><div class="icon">✨</div><h3>Facial & Skin Care</h3><p>Beauty care designed to leave you feeling refreshed.</p></article>
+        <article class="card"><div class="icon">💅</div><h3>Manicure & Pedicure</h3><p>Care and finishing touches for beautiful hands and feet.</p></article>
+        <article class="card"><div class="icon">💄</div><h3>Makeup</h3><p>Party, engagement, HD makeup and other occasions.</p></article>
+        <article class="card"><div class="icon">👰</div><h3>Bridal Services</h3><p>Bridal makeup and beauty preparation for your special day.</p></article>
+        <article class="card"><div class="icon">🌸</div><h3>Other Beauty Services</h3><p>Threading, waxing and other salon care services.</p></article>
+      </div>
+      <p class="notice" style="text-align:center">Replace these service descriptions with the exact services and prices offered by Sonas.</p>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-img"></div>
+      <div>
+        <div class="eyebrow">A little about us</div>
+        <h2>Feel beautiful. Feel confident.</h2>
+        <p>At Sonas Beauty Parlour, we believe beauty is about feeling comfortable, confident and cared for.</p>
+        <p>We create a welcoming space where you can take a little time for yourself and enjoy professional beauty care.</p>
+        <a class="btn" href="#booking">Visit Sonas</a>
+      </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+      <div class="section-head"><div class="small">A glimpse of beauty</div><h2>Our Gallery</h2><p>Add your mom's real parlour and work photos here for a much more personal website.</p></div>
+      <div class="gallery-grid">
+        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=85" alt="Beauty styling">
+        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=800&q=85" alt="Hair styling">
+        <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=800&q=85" alt="Beauty treatment">
+        <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=800&q=85" alt="Manicure">
+        <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=800&q=85" alt="Salon interior">
+        <img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=800&q=85" alt="Makeup">
+      </div>
+    </section>
+
+    <section class="booking" id="booking">
+      <h2>Ready for your beauty moment?</h2>
+      <p>Contact Sonas Beauty Parlour to ask about services and choose a convenient appointment time.</p>
+      <a class="btn" href="https://wa.me/919688347315?text=Hello%20Sonas%20Beauty%20Parlour%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener">Get in Touch</a>
+    </section>
+
+    <section id="contact">
+      <div class="section-head"><div class="small">Come visit us</div><h2>Find Sonas</h2><p>Bagaduthurai Road, near the Bus Stand, Bhavanisagar - 638541.</p></div>
+      <div class="location-box">
+        <div class="info-box">
+          <h3>Sonas Beauty Parlour</h3>
+          <p>📍 Bagaduthurai Road<br>Near the Bus Stand<br>Bhavanisagar - 638541</p>
+          <br>
+          <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Sonas+Beauty+Parlour+Bagaduthurai+Road+Bhavanisagar+638541">Get Directions</a>
+          <p>📞 <a href="tel:+919688347315">+91 96883 47315</a><br>💬 <a href="https://wa.me/919688347315" target="_blank" rel="noopener">WhatsApp: +91 96883 47315</a></p>
+        </div>
+        <div class="map">
+          <div><div style="font-size:3rem">📍</div><h3>Bhavanisagar</h3><p>Near the Bus Stand<br>Bagadudhurai Road</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© <span id="year"></span> Sonas Beauty Parlour · Made with ♥ for your beauty</footer>
+
+  <script>
+    function toggleMenu(){
+      const m=document.getElementById("mobileMenu");
+      m.style.display=m.style.display==="none"?"block":"none";
+    }
+    document.getElementById("year").textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
